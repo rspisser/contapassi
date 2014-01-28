@@ -1,0 +1,87 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+    <style name="StepCountTodayText">
+        <item name="android:gravity">center_horizontal</item>
+        
+        <item name="android:paddingBottom">10sp</item>
+        <item name="android:paddingTop">0sp</item>
+        
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#ff4444</item>
+        <item name="android:textSize">25sp</item>
+    </style>
+
+    <style name="StepCountThisHourText" parent="StepCountTodayText">
+
+        <item name="android:textSize">20sp</item>
+    </style>
+
+        <style name="StepCountThisMinuteText" parent="StepCountTodayText">
+
+        <item name="android:textSize">15sp</item>
+    </style>
+    
+        
+           <style name="StepCountTotalText" parent="StepCountTodayText">
+
+        <item name="android:textSize">15sp</item>
+    </style>
+    
+        
+        
+    <style name="StepCountTodayValue">
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:paddingTop">20sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#99cc00</item>
+        <item name="android:textSize">40sp</item>
+    </style>
+
+    <style name="StepCountThisHourValue" parent="StepCountTodayValue">
+        <item name="android:textSize">25sp</item>
+    </style>
+    <style name="StepCountThisMinuteValue" parent="StepCountThisHourValue">
+        <item name="android:textSize">20sp</item>
+    </style>
+    
+    <style name="StepCountTotalValue" parent="StepCountThisHourValue">
+        <item name="android:textSize">15sp</item>
+    </style>
+    
+    
+    
+    <style name="ContapassiValue">
+        <item name="android:background">#ffe4e4</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:padding">10sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#cc0000</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="Timestamp">
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:padding">10sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#cc0000</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+</resources>

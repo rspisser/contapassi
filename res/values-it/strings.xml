@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">contapassi</string>
+    <string name="numberOfStepsToday">Passi oggi: </string>
+    <string name="todaySteps">Passi oggi</string>
+    <string name="totalSteps">Passi totali</string>
+    
+    
+    
+
+</resources>
