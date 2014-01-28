@@ -27,7 +27,6 @@ public class MainActivity extends Activity {
 
 	SharedPreferences settings;
 
-
 	private int todaySteps = -1;
 
 	private int todayOffset = -1;
@@ -36,10 +35,9 @@ public class MainActivity extends Activity {
 	private TextView todayStepsView;
 	private TextView numberOfTotalStepsView;
 
-
 	@Override
 	public void onSaveInstanceState(Bundle savedInstanceState) {
-	
+
 		super.onSaveInstanceState(savedInstanceState);
 	}
 
@@ -69,27 +67,14 @@ public class MainActivity extends Activity {
 		todaySteps = settings.getInt("TodaySteps", -1);
 		previousStepTimeStamp = settings.getLong("previousStepTimeStamp", -1);
 
-		
 		Calendar current = Calendar.getInstance();
 		long currentTimeMillis = current.getTimeInMillis();
 
-
 		todayStepsView = (TextView) findViewById(R.id.numberOfSteps);
-
 		numberOfTotalStepsView = (TextView) findViewById(R.id.numberTotalSteps);
-		
-
 		todayStepsView.setText(" " + numberOfSteps);
 
-
-		// contapassiService = new Intent(this, ContaPassiService.class);
-		// this.startService(contapassiService);
-
-		// contapassiService.getExtras().get(key)
-
 	}
-
-
 
 	@Override
 	protected void onStop() {
@@ -104,7 +89,7 @@ public class MainActivity extends Activity {
 		editor.putInt("todaySteps", todaySteps);
 		editor.putInt("todayStepsCount", todayStepsCount);
 		editor.putLong("previousStepTimeStamp", previousStepTimeStamp);
-		
+
 		// Commit the edits!
 		editor.commit();
 	}
@@ -116,7 +101,6 @@ public class MainActivity extends Activity {
 			sensorManager.unregisterListener(mySensorEventListener);
 		}
 	}
-
 
 	private SensorEventListener mySensorEventListener = new SensorEventListener() {
 
