@@ -2,7 +2,6 @@
 <resources>
 
     <string name="app_name">stepcounter</string>
-    <string name="hello_world">Hello world!</string>
     <string name="todaySteps">Steps today</string>
     <string name="totalSteps">Total steps</string>
 

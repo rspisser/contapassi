@@ -22,18 +22,18 @@ public class MainActivity extends Activity {
 
 	private SensorManager sensorManager;
 	private Sensor sensor;
+
+	// numero di passi oggi
 	private int todayStepsCount = 0;
-	private int numberOfSteps = 0;
-
-	SharedPreferences settings;
-
-	private int todaySteps = -1;
-
+	// numero di passi fino a mezzanotte
 	private int todayOffset = -1;
+
 	private long previousStepTimeStamp = 0;
 
-	private TextView todayStepsView;
+	private TextView numberOfStepsView;
 	private TextView numberOfTotalStepsView;
+
+	SharedPreferences settings;
 
 	@Override
 	public void onSaveInstanceState(Bundle savedInstanceState) {
@@ -45,7 +45,7 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+		setContentView(R.layout.contapassi);
 
 		sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
 		sensor = sensorManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER);
@@ -62,17 +62,15 @@ public class MainActivity extends Activity {
 			finish();
 		}
 
+		// recuperiamo i dati dalle shared preferences
 		settings = getSharedPreferences("myapp", MODE_PRIVATE);
 		todayOffset = settings.getInt("todayOffset", -1);
-		todaySteps = settings.getInt("TodaySteps", -1);
+		todayStepsCount = settings.getInt("TodayStepsCount", -1);
 		previousStepTimeStamp = settings.getLong("previousStepTimeStamp", -1);
 
-		Calendar current = Calendar.getInstance();
-		long currentTimeMillis = current.getTimeInMillis();
-
-		todayStepsView = (TextView) findViewById(R.id.numberOfSteps);
+		numberOfStepsView = (TextView) findViewById(R.id.numberOfSteps);
 		numberOfTotalStepsView = (TextView) findViewById(R.id.numberTotalSteps);
-		todayStepsView.setText(" " + numberOfSteps);
+		numberOfStepsView.setText(" " + todayStepsCount);
 
 	}
 
@@ -80,17 +78,13 @@ public class MainActivity extends Activity {
 	protected void onStop() {
 		super.onStop();
 
-		// We need an Editor object to make preference changes.
-		// All objects are from android.context.Context
 		SharedPreferences settings = getSharedPreferences("myapp", 0);
 		SharedPreferences.Editor editor = settings.edit();
 
 		editor.putInt("todayOffset", todayOffset);
-		editor.putInt("todaySteps", todaySteps);
 		editor.putInt("todayStepsCount", todayStepsCount);
 		editor.putLong("previousStepTimeStamp", previousStepTimeStamp);
 
-		// Commit the edits!
 		editor.commit();
 	}
 
@@ -153,21 +147,15 @@ public class MainActivity extends Activity {
 
 					todayOffset = (int) event.values[0];
 					todayStepsCount = 0;
-					todaySteps = 0;
 
 				}
-				todaySteps = currentStepCount - todayOffset;
+				todayStepsCount = currentStepCount - todayOffset;
 
 				previousStepTimeStamp = actualTimeStamp.getTimeInMillis();
 
-				todayStepsView.setText(" " + todaySteps);
+				numberOfStepsView.setText(" " + todayStepsCount);
 				numberOfTotalStepsView.setText(" " + currentStepCount);
-				String formatted = format1.format(actualTimeStamp.getTime());
-				// DateFormat dateFormat = new SimpleDateFormat(
-				// "yyyy/MM/dd HH:mm:ss");
-				// String a= dateFormat.format(current);
-				Calendar prev = Calendar.getInstance();
-				prev.setTimeInMillis(previousStepTimeStamp);
+
 				/* fine controlliamo se è cambiato giorno */
 
 			}

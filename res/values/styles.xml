@@ -28,16 +28,7 @@
         <item name="android:textSize">25sp</item>
     </style>
 
-    <style name="StepCountThisHourText" parent="StepCountTodayText">
 
-        <item name="android:textSize">20sp</item>
-    </style>
-
-        <style name="StepCountThisMinuteText" parent="StepCountTodayText">
-
-        <item name="android:textSize">15sp</item>
-    </style>
-    
         
            <style name="StepCountTotalText" parent="StepCountTodayText">
 
@@ -54,14 +45,7 @@
         <item name="android:textSize">40sp</item>
     </style>
 
-    <style name="StepCountThisHourValue" parent="StepCountTodayValue">
-        <item name="android:textSize">25sp</item>
-    </style>
-    <style name="StepCountThisMinuteValue" parent="StepCountThisHourValue">
-        <item name="android:textSize">20sp</item>
-    </style>
-    
-    <style name="StepCountTotalValue" parent="StepCountThisHourValue">
+    <style name="StepCountTotalValue" parent="StepCountTodayValue">
         <item name="android:textSize">15sp</item>
     </style>
     
@@ -69,14 +53,6 @@
     
     <style name="ContapassiValue">
         <item name="android:background">#ffe4e4</item>
-        <item name="android:gravity">center_vertical</item>
-        <item name="android:padding">10sp</item>
-        <item name="android:textStyle">bold</item>
-        <item name="android:textColor">#cc0000</item>
-        <item name="android:textSize">13sp</item>
-    </style>
-
-    <style name="Timestamp">
         <item name="android:gravity">center_vertical</item>
         <item name="android:padding">10sp</item>
         <item name="android:textStyle">bold</item>
