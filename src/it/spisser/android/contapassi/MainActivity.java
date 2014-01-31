@@ -12,7 +12,6 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -140,7 +139,6 @@ public class MainActivity extends Activity {
 				previous.set(Calendar.SECOND, 0);
 				previous.set(Calendar.MILLISECOND, 0);
 
-				todayStepsCount++;
 				if (current.after(previous)) {
 					Log.d(TAG, "new day: " + format1.format(current.getTime())
 							+ "\n" + format1.format(previous.getTime()));
